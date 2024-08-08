@@ -30,6 +30,6 @@ try {
 } catch(e) {
 	FS.mkdirSync(build_dir, 0755);
 }
-var build_path = PATH.join(build_dir, "CSSOM.js");
-FS.writeFileSync(build_path, files.join(""));
+var build_path = PATH.join(build_dir, "CSSOM.mjs");
+FS.writeFileSync(build_path, `${files.join("")}\nexport default CSSOM;\n`);
 process.stdout.write("build/CSSOM.js is done\n");
